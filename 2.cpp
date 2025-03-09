@@ -188,8 +188,46 @@ namespace stu1
 
 namespace stu2
 {
-	
-}
+	bool changed = false;
+	void bubbleSort(int a[],int l)
+	{
+		for(int i=l;i>0;i--)
+ 		{
+  			changed=false;
+  			for(int j=1;j<i;j++)
+   				if(a[j-1]>a[j])
+   				{
+    				swap(a[j-1],a[j]);
+    				changed=true; 
+   				}
+  			if(!changed) 
+   			break;
+ 		}  
+	}
+}//同学二：冒泡排序 
+
+namespace stu3
+{
+	void selectionSort(int p[],int size)
+	{
+		int temp;
+ 		int index;
+ 		for(int i=0;i<size;i++)
+ 		{
+  			index=i;    
+  			temp=p[i];
+  			for(int j=i+1; j<size; j++)
+  			{
+   				if(p[index]>p[j])
+   				{ 
+    				index=j;
+   				}
+  			}
+  			p[i]=p[index];
+  			p[index]=temp;
+ 		}
+	}
+}//同学三：选择排序
 
 const int MAX = 10000;
 const int WAY = 9;
@@ -270,9 +308,41 @@ int main()
 		seconds = chrono::duration<double>(stop - start).count();
 		cout << seconds << "秒" << endl;
 		++i;
-
+		
+		cout << endl;
 		break;
 	}
+	
+	while(showStu2)
+	{
+		using namespace stu2;
+		
+		cout << "同学二：冒泡排序" << "   " << "用时：";
+		start = chrono::high_resolution_clock::now();
+		bubbleSort(b[i], MAX);
+		stop = chrono::high_resolution_clock::now();
+		seconds = chrono::duration<double>(stop - start).count();
+		cout << seconds << "秒" << endl;
+		++i;
+		
+		cout << endl;
+		break;
+	 } 
+	 while(showStu3)
+	{
+		using namespace stu3;
+		
+		cout << "同学三：选择排序" << "   " << "用时：";
+		start = chrono::high_resolution_clock::now();
+		selectionSort(b[i], MAX);
+		stop = chrono::high_resolution_clock::now();
+		seconds = chrono::duration<double>(stop - start).count();
+		cout << seconds << "秒" << endl;
+		++i;
+		
+		cout << endl;
+		break;
+	 } 
 }
 
 void random_num()
