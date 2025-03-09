@@ -329,6 +329,7 @@ int main()
 		cout << endl;
 		break;
 	 } 
+	 
 	 while(showStu3)
 	{
 		using namespace stu3;
