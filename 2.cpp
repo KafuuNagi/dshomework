@@ -244,6 +244,7 @@ int main()
 	bool showStu1 = true;
 	bool showStu2 = true;
 	bool showStu3 = true; //是否要比较某位同学的算法
+	
 	random_num();
 	copy_num();
 
